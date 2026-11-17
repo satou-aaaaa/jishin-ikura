@@ -1,4 +1,4 @@
-// SNS で貼られたときの絵（og.png 1200×630）を作る。今日の問題（答え）は入れず、遊び方の例だけ（大学生の子の所得80万円）。
+// SNS で貼られたときの絵（og.png 1200×630）を作る。今日の問題（答え）は入れず、遊び方の例だけ（地震保険料6万円）。
 // 使い方: node tools/make-og.cjs（qa/ の playwright を使う）
 const path = require("path");
 const { chromium } = require(path.join(__dirname, "..", "qa", "node_modules", "playwright"));
@@ -11,12 +11,12 @@ const K = require(path.join(__dirname, "..", "data.js"));
   <div style="width:1200px;height:630px;box-sizing:border-box;padding:48px 64px;background:#f3efe4;color:#1d2a3f;display:flex;gap:48px;align-items:center">
     <div style="flex:0 0 420px">
       <div style="font-size:30px;color:#83261a;letter-spacing:.06em">国税庁の資料で学ぶ</div>
-      <div style="font-size:84px;font-weight:900;margin-top:8px;line-height:1.15;color:#123554">扶養控除<br><span style="color:#2f6fae">いくら？</span></div>
-      <div style="font-size:36px;margin-top:14px">年齢と所得<br>の境目</div>
+      <div style="font-size:72px;font-weight:900;margin-top:8px;line-height:1.15;color:#123554">地震保険料<br>控除<br><span style="color:#2f6fae">いくら？</span></div>
+      <div style="font-size:36px;margin-top:14px">5万円まで<br>全額</div>
     </div>
     <div style="flex:1;background:#fffdf7;border:4px solid #1d2a3f;border-radius:8px;overflow:hidden">
-      <div style="font-size:30px;font-weight:700;padding:22px 20px 6px">🧾大学生の子（20歳）<br>所得80万円</div>
-      <div style="display:flex;flex-direction:column;gap:10px;padding:16px">${line("380,000円")}${line("630,000円", 1)}${line("0円（受けられない）")}</div>
+      <div style="font-size:30px;font-weight:700;padding:22px 20px 6px">🧾地震保険の保険料<br>1年に6万円</div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:16px">${line("60,000円")}${line("50,000円", 1)}${line("15,000円")}</div>
     </div>
   </div></body>`);
   await p.screenshot({ path: path.join(__dirname, "..", "og.png") });
